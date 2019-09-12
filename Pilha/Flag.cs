@@ -8,6 +8,6 @@ namespace Curso
 {
     class Flag : Dado
     {
-        public Flag(int info) : base(info) { }
+        public Flag() : base(int.MaxValue) { }
     }
 }

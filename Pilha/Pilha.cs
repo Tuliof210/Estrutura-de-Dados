@@ -12,7 +12,7 @@ namespace Curso
 
         public Pilha()
         {
-            Topo = new Flag(int.MaxValue);
+            Topo = new Flag();
         }
 
         public bool IsEmpty()
