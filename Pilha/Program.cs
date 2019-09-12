@@ -26,6 +26,18 @@ namespace Curso
 
             Console.WriteLine("\nPilha Vazia: " + pilha.IsEmpty());
 
+            pilha.Push(new Dado(5));
+            pilha.Push(new Dado(5));
+            pilha.Push(new Dado(5));
+            pilha.Push(new Dado(5));
+            pilha.Push(new Dado(5));
+            pilha.Push(new Dado(5));
+
+            Console.WriteLine("\nPilha Vazia: " + pilha.IsEmpty());
+
+            pilha.Clear();
+            Console.WriteLine("\nPilha Vazia: " + pilha.IsEmpty());
+
             Console.ReadKey();
         }
     }

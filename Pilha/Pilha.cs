@@ -15,6 +15,10 @@ namespace Curso
             Topo = new Flag();
         }
 
+        public void Clear()
+        {
+            Topo.Prox = null;
+        }
         public bool IsEmpty()
         {
             if (Topo.Prox == null) return true;
