@@ -15,6 +15,7 @@ namespace Curso
             Topo = new Flag();
         }
 
+
         public void Clear()
         {
             Topo.Prox = null;
@@ -24,6 +25,8 @@ namespace Curso
             if (Topo.Prox == null) return true;
             return false;
         }
+
+
         public void Push(Dado dado)
         {
             if (IsEmpty()) Topo.Prox = dado;
@@ -34,6 +37,8 @@ namespace Curso
             Topo.Prox = dado;
             dado.Prox = atual;
         }
+
+
         public Dado Pop()
         {
             if (IsEmpty()) return null;
@@ -47,6 +52,8 @@ namespace Curso
             if (IsEmpty()) return null;
             return Topo.Prox;
         }
+
+        
         public int Size()
         {
             int size = 1;
