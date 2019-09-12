@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Curso
+﻿namespace Estrutura.Pilha
 {
     class Pilha
     {
@@ -53,7 +47,7 @@ namespace Curso
             return Topo.Prox;
         }
 
-        
+
         public int Size()
         {
             int size = 1;
