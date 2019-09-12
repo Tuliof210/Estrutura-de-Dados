@@ -37,38 +37,27 @@ namespace Curso
         public Dado Pop()
         {
             if (IsEmpty()) return null;
-            else
-            {
-                Dado pop = Topo.Prox;
-                Topo.Prox = pop.Prox;
-                return pop;
-            }
+
+            Dado pop = Topo.Prox;
+            Topo.Prox = pop.Prox;
+            return pop;
         }
         public Dado Top()
         {
             if (IsEmpty()) return null;
-            else
-            {
-                return Topo.Prox;
-            }
+            return Topo.Prox;
         }
         public int Size()
         {
             int size = 1;
 
             if (IsEmpty()) return 0;
-            else
-            {
-                return size + Sum(Topo.Prox, size);
-            }
+            return size + Sum(Topo.Prox, size);
         }
         private int Sum(Dado atual, int size)
         {
             if (atual.Prox == null) return 0;
-            else
-            {
-                return size + Sum(atual.Prox, size);
-            }
+            return size + Sum(atual.Prox, size);
         }
     }
 }
