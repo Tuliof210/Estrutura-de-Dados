@@ -31,6 +31,7 @@ namespace Estrutura.Pilha
             pilha.Push(new Dado(5));
             pilha.Push(new Dado(5));
             pilha.Push(new Dado(5));
+            pilha.Push(new Dado(5));
 
             Console.WriteLine("\nPilha Vazia: " + pilha.IsEmpty());
 
