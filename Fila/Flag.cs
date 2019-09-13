@@ -1,5 +1,4 @@
-﻿using System;
-namespace Estrutura.Fila
+﻿namespace Estrutura.Fila
 {
     class Flag : Dado
     {
