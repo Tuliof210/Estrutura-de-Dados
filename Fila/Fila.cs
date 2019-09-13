@@ -78,6 +78,8 @@ namespace Estrutura.Fila
             Primeiro.Prox = dequeue.Prox;
             Tamanho--;
 
+            dequeue.Prox = null;
+
             return dequeue;
         }
         
