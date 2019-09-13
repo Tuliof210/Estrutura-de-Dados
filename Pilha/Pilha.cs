@@ -48,6 +48,8 @@
             Topo.Prox = pop.Prox;
             Tamanho--;
 
+            pop.Prox = null;
+
             return pop;
         }
         public Dado Top()
