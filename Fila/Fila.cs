@@ -8,10 +8,12 @@ namespace Estrutura.Fila
     class Fila
     {
         public Flag Primeiro { get; set; }
+        public int Tamanho { get; private set; }
 
         public Fila()
         {
             Primeiro = new Flag();
+            Primeiro.Prox = Primeiro;
         }
 
 
@@ -37,10 +39,11 @@ namespace Estrutura.Fila
         public void Clear()
         {
             Primeiro.Prox = null;
+            Tamanho = 0;
         }
         public bool IsEmpty()
         {
-            if (Primeiro.Prox == null) return true;
+            if (Primeiro.Prox == Primeiro) return true;
             return false;
         }
 
@@ -51,6 +54,7 @@ namespace Estrutura.Fila
             {
                 Primeiro.Prox = dado;
                 dado.Prox = Primeiro;
+                Tamanho++;
             }
             else Enqueue(dado, Primeiro.Prox);
         }
@@ -60,6 +64,7 @@ namespace Estrutura.Fila
             {
                 atual.Prox = dado;
                 dado.Prox = Primeiro;
+                Tamanho++;
             }
             else Enqueue(dado, atual.Prox);
         }
@@ -71,21 +76,15 @@ namespace Estrutura.Fila
 
             Dado dequeue = Primeiro.Prox;
             Primeiro.Prox = dequeue.Prox;
+            Tamanho--;
+
             return dequeue;
         }
         
 
         public int Size()
         {
-            int size = 1;
-
-            if (IsEmpty()) return 0;
-            return size + Sum(Primeiro.Prox, size);
-        }
-        private int Sum(Dado atual, int size)
-        {
-            if (atual.Prox == Primeiro) return 0;
-            return size + Sum(atual.Prox, size);
+            return Tamanho;
         }
     }
 }
