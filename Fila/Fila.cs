@@ -38,7 +38,7 @@ namespace Estrutura.Fila
 
         public void Clear()
         {
-            Primeiro.Prox = null;
+            Primeiro.Prox = Primeiro;
             Tamanho = 0;
         }
         public bool IsEmpty()
