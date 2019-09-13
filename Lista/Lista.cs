@@ -84,7 +84,21 @@ namespace Estrutura.Lista
 
             return remove;
         }
-        
+
+
+        public Dado Find(char info)
+        {
+            if (IsEmpty()) return null;
+            if (Marcador.Proximo.Info == info) return Marcador.Proximo;
+            return Find(info, Marcador.Proximo);
+        }
+        private Dado Find(char info, Dado atual)
+        {
+            if (atual.Proximo == Marcador) return null;
+            if (atual.Proximo.Info == info) return atual.Proximo;
+            return Find(info, atual.Proximo);
+        }
+
 
         public int Size()
         {

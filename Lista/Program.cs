@@ -32,6 +32,8 @@ namespace Estrutura.Lista
 
             Console.WriteLine($"First: {lista.First()}, Last: {lista.Last()}");
 
+            Console.WriteLine($"Procurado(c): {lista.Find('c')}");
+
             lista.Clear();
             Console.WriteLine($"Vazia? {lista.IsEmpty()}");
 
