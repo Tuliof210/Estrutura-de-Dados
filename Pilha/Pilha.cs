@@ -3,6 +3,7 @@
     class Pilha
     {
         public Flag Topo { get; set; }
+        public int Tamanho { get; private set; }
 
         public Pilha()
         {
@@ -13,6 +14,7 @@
         public void Clear()
         {
             Topo.Prox = null;
+            Tamanho = 0;
         }
         public bool IsEmpty()
         {
@@ -23,13 +25,18 @@
 
         public void Push(Dado dado)
         {
-            if (IsEmpty()) Topo.Prox = dado;
+            if (IsEmpty())
+            {
+                Topo.Prox = dado;
+                Tamanho++;
+            }
             else Push(dado, Topo.Prox);
         }
         private void Push(Dado dado, Dado atual)
         {
             Topo.Prox = dado;
             dado.Prox = atual;
+            Tamanho++;
         }
 
 
@@ -39,6 +46,8 @@
 
             Dado pop = Topo.Prox;
             Topo.Prox = pop.Prox;
+            Tamanho--;
+
             return pop;
         }
         public Dado Top()
@@ -50,15 +59,7 @@
 
         public int Size()
         {
-            int size = 1;
-
-            if (IsEmpty()) return 0;
-            return size + Sum(Topo.Prox, size);
-        }
-        private int Sum(Dado atual, int size)
-        {
-            if (atual.Prox == null) return 0;
-            return size + Sum(atual.Prox, size);
+            return Tamanho;
         }
     }
 }
