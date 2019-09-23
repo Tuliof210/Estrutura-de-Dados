@@ -36,8 +36,7 @@ namespace Estrutura.Lista
         }
         public bool IsEmpty()
         {
-            if (Marcador.Proximo == Marcador) return true;
-            return false;
+            return Marcador.Proximo == Marcador;
         }
 
         

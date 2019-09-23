@@ -43,8 +43,7 @@ namespace Estrutura.Fila
         }
         public bool IsEmpty()
         {
-            if (Primeiro.Prox == Primeiro) return true;
-            return false;
+            return Primeiro.Prox == Primeiro;
         }
 
 

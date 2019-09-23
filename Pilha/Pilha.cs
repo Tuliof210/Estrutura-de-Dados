@@ -18,8 +18,7 @@
         }
         public bool IsEmpty()
         {
-            if (Topo.Prox == null) return true;
-            return false;
+            return Topo.Prox == null;
         }
 
 
